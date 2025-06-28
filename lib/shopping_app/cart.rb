@@ -2,7 +2,7 @@ require_relative "item_manager"
 require_relative "ownable"
 
 class Cart
-  include Ownable
+  extend Ownable
 
   include ItemManager
   
