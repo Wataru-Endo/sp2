@@ -4,6 +4,7 @@ require_relative "item"
 
 # このモジュールをインクルードすると、自身の所有するItemインスタンスを操れるようになります。
 module ItemManager
+
   def items # 自身の所有する（自身がオーナーとなっている）全てのItemインスタンスを返します。
     Item.all.select{|item| item.owner == self }
   end
@@ -15,7 +16,7 @@ module ItemManager
   end
 
   def items_list # 自身の所有するItemインスタンスの在庫状況を、["番号", "商品名", "金額", "数量"]という列でテーブル形式にして出力します。
-    kosi = Kosi::Table.new({header: %w{商品番号 商品名 金額 数量}}) # Gemgileに"kosi"のURLを記載
+    kosi = Kosi::Table.new({header: %w{商品番号 商品名 金額 数量}}) # Gemfileに"kosi"のURLを記載
     print kosi.render(
       stock.map do |stock|
         [
