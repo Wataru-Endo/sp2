@@ -2,7 +2,7 @@ require_relative "item_manager"
 require_relative "wallet"
 
 class User
-include ItemManager
+  include ItemManager
   
   attr_accessor :name
   attr_reader :wallet
